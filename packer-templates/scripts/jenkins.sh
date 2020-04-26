@@ -16,7 +16,7 @@ wget -q -O - https://jenkins-ci.org/debian/jenkins-ci.org.key | apt-key add -
 echo deb http://pkg.jenkins-ci.org/debian binary/ > /etc/apt/sources.list.d/jenkins.list
 
 apt-get update
-apt-get install -y jenkins
+apt-get install -y --force-yes jenkins
 apt-get upgrade
 
 # copy premade configuration files
@@ -24,6 +24,7 @@ apt-get upgrade
 cp -f /tmp/jenkins-config/jenkins /etc/default
 # fix dos newlines for Windows users
 dos2unix /etc/default/jenkins
+dos2unix /tmp/jenkins-config/install_jenkins_plugins.sh
 # install some extra plugins
 /bin/bash /tmp/jenkins-config/install_jenkins_plugins.sh
 # jenkins security and pipeline plugin config
