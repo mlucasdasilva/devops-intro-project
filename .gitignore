@@ -1,5 +1,6 @@
 .DS_Store
 packer_cache
 packer-templates/virtualbox/
+packer-templates/virtualbox-controlserver/
 devops-kungfu/
 output
